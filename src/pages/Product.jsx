@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 import { assets } from '../assets/frontend_assets/assets';
+import RelatedProducts from '../components/RelatedProducts';
 
 
 const Product = () => {
@@ -79,11 +80,15 @@ const Product = () => {
     <b className='border px-5 py-3 text-sm'>Description</b>
     <p className='border px-5 py-3 text-sm'>Reviews(122)</p>
   </div>
-  <div>
-    
+  <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
+    <p>Fits that vibe with you, not against you. Our pieces are all about comfort you can actually live in, while still serving looks. From laid-back basics to statement fits, everything’s designed to be styled your way—dress it up, dress it down, just make it yours. Soft fabrics, fresh colors, and silhouettes that actually get it—because clothes should do more than just cover, they should match your energy.</p>
+    <p>Made with soft, breathable fabrics that actually feel good on your skin. Lightweight for all-day comfort, durable enough to keep up with your plans, and stylish enough to look effortless. Basically—clothes that feel as good as they look.</p>
   </div>
 </div>
-    </div>
+{/*----------------------------display related products ---------------------*/}
+
+    <RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
+</div>
   ) : <div className='opacity-0'></div>
 }
 
